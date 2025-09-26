@@ -1,0 +1,230 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 100px 0;
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+}
+section header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 100px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+section header .logo img {
+  filter: invert(1);
+  max-width: 100px;
+}
+section header .toggle {
+  width: 30px;
+  height: 30px;
+  background: url(../img/menu.png);
+  background-size: 30px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(1);
+}
+section .content {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+section .content .imgBx {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section .content .imgBx img {
+  max-width: 100%;
+  animation: animacionZapatilla 3.3s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+}
+section .content .text {
+  max-width: 700px;
+  margin-top: 30px;
+}
+section .content .text h2 {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+section .content .text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-top: 15px;
+  font-weight: 300;
+}
+section .content .text a {
+  display: inline-block;
+  padding: 12px 35px;
+  color: #667eea;
+  background: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+section .content .text a:hover {
+  background: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+section:before {
+  content: "ADIDAS";
+  font-size: 18vw;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  font-weight: 900;
+  padding-top: 15vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 5px;
+}
+
+.sci {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sci li {
+  list-style: none;
+  margin: 10px 0;
+}
+.sci li a {
+  display: block;
+  color: #fff;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+.sci li a:hover {
+  transform: translateY(-5px) scale(1.2);
+  color: #a8e6cf;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px 40px;
+  }
+  section {
+    padding: 40px 40px 0;
+    overflow: hidden;
+  }
+  section:before {
+    font-size: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10vh;
+  }
+  .content {
+    margin-top: 100px;
+  }
+  .content .imgBx {
+    margin-top: 50px;
+  }
+  .content .text h2 {
+    font-size: 2em;
+  }
+  .content .text p {
+    font-size: 1em;
+  }
+  .sci {
+    position: relative;
+    justify-content: flex-start;
+    flex-direction: row;
+    bottom: 10px;
+    right: inherit;
+    margin-top: 40px;
+  }
+  .sci li {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+@keyframes animacionZapatilla {
+  0%, 100% {
+    transform: translateY(-25px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(-1deg);
+  }
+}
+/* Efectos de partículas decorativas */
+.particulas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.particulas .particula {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: float 6s infinite linear;
+}
+.particulas .particula:nth-child(1) {
+  left: 20%;
+  animation-delay: 0s;
+}
+.particulas .particula:nth-child(2) {
+  left: 40%;
+  animation-delay: 1.5s;
+}
+.particulas .particula:nth-child(3) {
+  left: 60%;
+  animation-delay: 3s;
+}
+.particulas .particula:nth-child(4) {
+  left: 80%;
+  animation-delay: 4.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */
